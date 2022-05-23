@@ -11,6 +11,11 @@ Run:
 poetry init
 ```
 
+## Run the app
+Run:
+```bash
+uvicorn --reload app.helloworld:app --host 0.0.0.0 --port 8000
+```
 ## Install new Python packages
 1. Add the package via Poetry
 ``` bash
