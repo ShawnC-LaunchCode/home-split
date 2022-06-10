@@ -21,4 +21,5 @@ async def addDebt(principal: float = 0, remaining: float = 0, interest_rate: flo
 @app.get("/addUser")
 async def addDebt(firstName: str = "first", lastName: str = "lastName"):
     now = datetime.datetime.now()
-    return {"firstName" : {firstName}, "lastname": {lastName}, "now": {now}, "lastUpdated": {now}}
+    fake_id=1
+    return {"id":{fake_id},"firstName" : {firstName}, "lastname": {lastName}, "created_at": {now}, "updated_at": {now}}
