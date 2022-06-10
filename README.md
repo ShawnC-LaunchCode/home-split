@@ -1,22 +1,29 @@
 # HOME-SPLIT
 ## Getting started
-### 1. Install Poetry
-Poetry is required for package dependency management.
 
-**Install:** https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions
+### Install Dependencies
+1. **Poetry** - for package dependency management.
 
-### 2. Initialize Poetry
+https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions
+
+1. **Docker** - for required services, like mysql
+
+https://docs.docker.com/desktop/windows/install/
+
+### Set up Python environment
 Run:
 ```bash
-poetry init
+poetry install
+poetry shell
 ```
 
-## Run the app
+### Run the app
 Run:
 ```bash
+docker-compose up # for the database
 uvicorn --reload app.helloworld:app --host 0.0.0.0 --port 8000
 ```
-## Install new Python packages
+## Installing new Python packages
 1. Add the package via Poetry
 ``` bash
 poetry add <some-new-awesome-package>
