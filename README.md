@@ -36,7 +36,7 @@ poetry shell
 ```
 
 ## Modifying the database schema
-1. Make your update in `app/modeils.py`
+1. Make your update in `app/models.py`
 2. Run `alembic revision --autogenerate -m "init"`
 3. Doublecheck the new migration file generated in `migrations/versions`
 4. Run `alembic upgrade head`
