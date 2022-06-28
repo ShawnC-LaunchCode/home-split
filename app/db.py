@@ -2,7 +2,7 @@ import os
 
 from sqlmodel import create_engine, SQLModel, Session
 
-DATABASE_URL = "mysql+aiomysql://app:secure_password@127.0.0.1:3306/homesplit_dev"
+DATABASE_URL = "mysql+aiomysql://app:secure_password@127.0.0.1:3360/homesplit_dev"
 
 engine = create_engine(DATABASE_URL, echo=True)
 
