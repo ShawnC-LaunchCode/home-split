@@ -21,7 +21,7 @@ poetry shell
 Run:
 ```bash
 docker-compose up # for the database
-uvicorn --reload app.helloworld:app --host 0.0.0.0 --port 8000
+uvicorn --reload app.helloworld:app --host 0.0.0.0 --port 8001
 ```
 ## Installing new Python packages
 1. Add the package via Poetry
