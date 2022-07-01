@@ -1,8 +1,6 @@
-from datetime import date, datetime, time
-#import datetime
+from datetime import datetime
 from sqlmodel import SQLModel, Field, func, create_engine
 from typing import Optional
-
 
 
 class UserBase(SQLModel):
@@ -12,7 +10,8 @@ class UserBase(SQLModel):
     created_at: datetime
     updated_at: datetime
 
+
 class User(UserBase, table=True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+    id: int = Field(default=None, primary_key=True)
     created_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
     updated_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
