@@ -15,3 +15,17 @@ class User(UserBase, table=True):
     id: int = Field(default=None, primary_key=True)
     created_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
     updated_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
+
+
+class DebtBase(SQLModel):
+    principal: float
+    remaining: float
+    interest_rate: float
+    term_days: int
+    created_at: datetime
+    updated_at: datetime
+
+class Debt(DebtBase, table=True):
+    id: int = Field(default=None, primary_key=True)
+    created_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
+    updated_at: datetime = Field(default_factory=datetime.utcnow, nullable=False)
