@@ -9,7 +9,7 @@ app = FastAPI()
 
 
 engine = create_engine(
-    "mysql+mysqldb://app:secure_password@127.0.0.1:3306/homesplit_dev", echo=True
+    "mysql+mysqldb://app:secure_password@localhost:3360/homesplit_dev", echo=True
 )
 
 
