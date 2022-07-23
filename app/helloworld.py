@@ -1,9 +1,9 @@
 import datetime
 from email.policy import default
-from typing import Optional
+from typing import List, Optional
 from fastapi import FastAPI
 from .models import Debt, User
-from sqlmodel import Field, Session, SQLModel, create_engine
+from sqlmodel import Field, Session, SQLModel, create_engine, select
 
 app = FastAPI()
 
@@ -15,7 +15,7 @@ engine = create_engine(
 
 @app.get("/")
 async def hello_world():
-    return {"message": "Hello world!!!!!!!!!!!!!!!!!&"}
+    return {"message": "Hello world!!!!!!!!!!!!!!!!!"}
 
 
 @app.post("/users")
@@ -31,6 +31,21 @@ def get_user(user_id: int):
     with Session(engine) as session:
         user=session.get(User, user_id)
     return user
+
+
+
+
+@app.get("/users")
+def get_all_users():
+    with Session(engine) as session:
+        statement= select(User)
+        results = session.exec(statement)
+        users = results.all()
+        
+    return users
+
+
+
 
 
 
